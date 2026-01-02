@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-flask-app
+  labels:
+    app: mon-flask-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon-flask-app
+  template:
+    metadata:
+      labels:
+        app: mon-flask-app
+    spec:
+      containers:
+      - name: mon-flask-app
+        image: docker.io/quentinhemeryck/mon-flask-app:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
