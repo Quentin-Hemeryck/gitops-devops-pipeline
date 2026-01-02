@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mon-flask-app
-        image: docker.io/quentinhemeryck/mon-flask-app:latest
+        image: docker.io/quentinhemeryck/mon-flask-app:10764ba
         ports:
         - containerPort: 5000
         resources:
